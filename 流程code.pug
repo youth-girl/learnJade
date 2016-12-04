@@ -1,0 +1,41 @@
+doctype
+html
+    head
+        title 流程代码
+    body
+        h2 for each while 条件判断语句
+        - var imooc = {course:'jade',level:'high'}
+        - for (var k in imooc)
+            p= imooc[k]
+
+        each value, key in imooc
+            p #{key}: #{value}
+
+        - var course = ['jade','node','express']
+        each item in course
+            p= item
+
+        - var n = 0
+            ul
+                while n<4
+                    li= n++
+
+        - var isImooc = true
+        - var lesson = ['jade', 'node']
+        if lesson
+            if lesson.length > 2
+                p #{lesson.join(', ')}
+            else
+                p no lesson
+
+        unless !isImooc
+            p #{lesson.length}
+
+        - var name = 'jade'
+            case name
+                when 'java'
+                when 'node'
+                    p hi node
+                when 'jade': p hi jade
+                default
+                    p hi

@@ -1,0 +1,6 @@
+jade的继承：
+    继承的是整个pug文件，比如：extend继承extend2时，在extend里面不需要在写doctype之类的，
+    include，指包含一个文件：
+        include 文件名(jade模板)
+        include 文件名.html(不会当作jade文件进行编译)
+使用继承的一个好处就是，写好一个模板文件然后每次进行继承(被继承的文件可以为一个代码块)

@@ -1,0 +1,30 @@
+doctype
+html
+    head
+        title mixins
+    body
+        h2 mixins 的定义与使用
+        mixin lesson
+            p imooc jade study
+        +lesson
+
+        mixin study(name, courses)
+            p #{name}
+            ul.course
+                each course in courses
+                    li= course
+        +study('tom', ['jade','node'])
+
+        mixin link(href, name)
+            //- attributes == {class: "btn"}
+            a(class!=attributes.class href=href)= name
+
+        +link('/foo', 'foo')(class="btn1")
+
+        mixin list(id, ...items)
+            ul(id=id)
+                each item in items
+                    li= item
+
+        +list('my-list', 1, 2, 3, 4)
+

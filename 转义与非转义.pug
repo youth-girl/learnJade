@@ -1,0 +1,27 @@
+doctype
+html
+    head
+        title imooc Hello
+    body
+        h1 Hello jade
+
+        - var data = 'text';
+        - var dataHtml = '<script>alert(1)</script>';
+        //转义
+        p #{data}
+        p #{dataHtml}
+        p= data
+        p= dataHtml
+        //不转义，使用！
+        p !{dataHtml}
+        p!= dataHtml
+
+        //对#{}的转义
+        p \#{}
+
+        //undefined的不输出
+        input(value=newData class=data)
+        //变量输出不是undefined
+        input(value=newData)
+        //
+            当值为变量时，直接赋值变量名
