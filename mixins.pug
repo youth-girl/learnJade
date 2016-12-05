@@ -21,10 +21,21 @@ html
 
         +link('/foo', 'foo')(class="btn1")
 
+        mixin link(value)
+            //- attributes == {class: "btn"}
+            input(type!=attributes.type value=value)
+
+        +link('foo')(type="text")
+        //
+            隐式的属性传递，首先调用mixin时最后面的属性值与元素设置的属性值相同
+            其次，元素设置隐式属性时使用！=
+
         mixin list(id, ...items)
             ul(id=id)
                 each item in items
                     li= item
 
         +list('my-list', 1, 2, 3, 4)
+        //
+            这种方式类似与argument
 
